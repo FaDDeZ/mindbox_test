@@ -28,19 +28,12 @@ namespace ConsoleApp3
                         b = Convert.ToSingle(Console.ReadLine());
                         line();
                         c = Convert.ToSingle(Console.ReadLine());
-                        try
-                        {
-                            Triangle tr = new Triangle(a, b, c);
-                            Console.WriteLine(tr.get_Square());
-                        }
-                        catch (Exception Ex)
-                        {
-                            Console.WriteLine(Ex.Message);
-                        }
+                        Triangle tr = new Triangle(a, b, c);
+                        Console.WriteLine(tr.get_Square());
                     }
-                    catch 
+                    catch (Exception Ex)
                     {
-                        Console.WriteLine("You need digits");
+                        Console.WriteLine(Ex.Message);
                     }
                     break;
                 case "circle":
@@ -49,12 +42,11 @@ namespace ConsoleApp3
                         line();
                         a = Convert.ToSingle(Console.ReadLine());
                         Circle cr = new Circle(a);
-                        Console.WriteLine(cr.get_Square());
-                        
+                        Console.WriteLine(cr.get_Square()); 
                     }
-                    catch
+                    catch (Exception Ex)
                     {
-                        Console.WriteLine("You need digits");
+                        Console.WriteLine(Ex.Message);
                     }
                     break;
                 default: 
