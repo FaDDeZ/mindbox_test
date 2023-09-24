@@ -3,15 +3,15 @@ import sqlite3 as sl
 
 if __name__ == '__main__':
     con = sl.connect('pc.db')
-    sql = 'DELETE from products'
-    with con:
-        con.execute(sql)
-    sql = 'DELETE from category'
-    with con:
-        con.execute(sql)
-    sql = 'DELETE from product_cat'
-    with con:
-        con.execute(sql)
+    # sql = 'DELETE from products'
+    # with con:
+        # con.execute(sql)
+    # sql = 'DELETE from category'
+    # with con:
+        # con.execute(sql)
+    # sql = 'DELETE from product_cat'
+    # with con:
+        # con.execute(sql)
     data = con.execute("select count(*) from sqlite_master where type='table' and name='products'")
     for row in data:
         if row[0] == 0:
@@ -27,7 +27,7 @@ if __name__ == '__main__':
     data = [
         (1, "T-shirt"),
         (2, "BMW"),
-        (3, "Phone")
+        (3, "Galaxy S23")
     ]
     with con:
         con.executemany(sql, data)
